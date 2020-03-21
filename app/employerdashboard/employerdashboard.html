@@ -1,0 +1,25 @@
+<h3 style="float: center; ">Reportee Dashboard</h3></br>
+
+<div class="form-container">
+    <table class="table">
+    <tr>
+        <th>Report
+        </th>
+        <th>Time of Submission
+        </th>
+        <th>Manager's Decision
+        </th>
+        <th>Employee's Name
+        </th>
+    </tr>
+   <tr ng-repeat="x in vm.expenseitems">
+        <td><a ui-sref="reportmanager({reportname : '{{x.expname}}'})" >{{x.expname}}</a>
+        </td>
+         <td>{{x.timeofsub}}
+        </td>
+        <td>{{x.managerremark}}
+        </td>
+        <td>{{x.empname}}
+        </td>
+</table>
+</div>

@@ -1,0 +1,416 @@
+
+<div class="form-container">
+   
+<title>Expense Reporter</title>
+<body>
+
+<h2 class="form-group" style="text-align: center;padding-bottom:15px">{{vm.expenseitem.expname}}</h2>
+<div>
+    <form method="post">
+        <div class="form-group">
+            <label for="empname" >Employee Name</label>
+            <h4 style="display:inline;padding-left:300px">Onward Travel</h4>
+            <h4 style="display:inline;padding-left:300px">Return Travel</h4>
+            <input type="text" id="empname" name="empname" class="form-control" style="width:100px" ng-model="vm.expenseitem.empname"  required readonly/>
+
+        </div>
+        <div class="form-group">
+            <label for="empid">Employee ID</label>
+            <label for="ondepdate" style="display:inline;padding-left:50px" >Departure Date</label>
+            <input type="text" class="form-control" style="display:inline;margin-left:10px;width:125px" name="ondepdatepicker" id="ondepdatepicker" ng-model="vm.expenseitem.ondepdatepicker" readonly>
+            <label for="onarrdate"  style="display:inline;padding-left:10px" >Arrival Date</label>
+            <input type="text" class="form-control" style="display:inline;margin-left:10px;width:125px" name="onarrdatepicker" id="onarrdatepicker" ng-model="vm.expenseitem.onarrdatepicker" readonly>
+            <label for="retdepdate" style="display:inline;padding-left:30px" >Departure Date</label>
+            <input type="text" class="form-control" style="display:inline;margin-left:10px;width:125px" name="retdepdatepicker" id="retdepdatepicker" ng-model="vm.expenseitem.retdepdatepicker" readonly>
+            <label for="retarrdate" style="display:inline;padding-left:10px" >Arrival Date</label>
+            <input type="text" class="form-control" style="display:inline;margin-left:10px;width:125px" name="retarrdatepicker" id="retarrdatepicker" ng-model="vm.expenseitem.retarrdatepicker" readonly>
+            <input type="text" class="form-control" id="empid" name="empid" class="form-control" style="width:100px" ng-model="vm.expenseitem.empid" required readonly />
+        </div>
+        <div class="form-group">
+            <label for="managername">Manager's Name</label>
+            <label for="ondeptime" style="display:inline;padding-left:105px" >Departure Time</label>
+             <input type="text" class="form-control" style="display:inline;margin-left:10px;width:95px" name="ondeptimepicker" id="ondeptimepicker" ng-model="vm.expenseitem.ondeptimepicker" readonly>
+             <label for="onarrtime" style="display:inline;padding-left:10px" >Arrival Time</label>
+             <input type="text" class="form-control" style="display:inline;margin-left:10px;width:95px" name="onarrtimepicker" id="onarrtimepicker" ng-model="vm.expenseitem.onarrtimepicker" readonly>
+             <label for="retdeptime" style="display:inline;padding-left:55px" >Departure Time</label>
+             <input type="text" class="form-control" style="display:inline;margin-left:10px;width:95px" name="retdeptimepicker" id="retdeptimepicker" ng-model="vm.expenseitem.retdeptimepicker" readonly>
+             <label for="retarrtime" style="display:inline;padding-left:10px" >Arrival Time</label>
+             <input type="text" class="form-control" style="display:inline;margin-left:10px;width:95px" name="retarrtimepicker" id="retarrtimepicker" ng-model="vm.expenseitem.retarrtimepicker" readonly>
+            <input type="text" id="managername"  name="managername" class="form-control" style="width:100px" ng-model="vm.expenseitem.managername" required readonly />
+        </div>
+        <div class="form-group">
+            <label for="manageremail">Manager's Email ID</label>
+            <label for="ondepplacelabel" style="display:inline;padding-left:90px;" >Departure Place</label>
+             <input type="text" class="form-control" style="display:inline;margin-left:7px;width:100px" name="ondepplace" id="ondepplace" ng-model="vm.expenseitem.ondepplace" readonly>
+             <label for="onarrplacelabel" style="display:inline;padding-left:10px;" >Arrival Place</label>
+             <input type="text" class="form-control" style="display:inline;margin-left:7px;width:100px" name="onarrplace" id="onarrplace" ng-model="vm.expenseitem.onarrplace" readonly>
+             <label for="retdepplacelabel" style="display:inline;padding-left:43px;" >Departure Place</label>
+             <input type="text"  class="form-control" style="display:inline;margin-left:7px;width:100px" name="retdepplace" id="retdepplace" ng-model="vm.expenseitem.retdepplace" readonly>
+             <label for="retarrplacelabel" style="display:inline;padding-left:10px;" >Arrival Place</label>
+             <input type="text" class="form-control" style="display:inline;margin-left:7px;width:100px" name="retarrplace" id="retarrplace" ng-model="vm.expenseitem.retarrplace" readonly>
+            <input type="text" id="manageremail" name="manageremail"  class="form-control" style="width:205px" ng-model="vm.expenseitem.manageremail"  readonly />
+
+            
+        </div>
+        
+        <div class="form-group">
+        <label for="empusername" >Employee username</label>
+        	 <input type="text" id="empusername"  name="empusername" class="form-control" style="width:100px"  required ng-model="vm.expenseitem.empusername"  readonly />
+        </div>
+        <div class="form-group">
+        <label for="timeofsub" >Time Of Submission</label>
+        	 <input type="text" id="timeofsub"  name="timeofsub" class="form-control" style="width:100px"  required ng-model="vm.expenseitem.timeofsub"  readonly />
+        </div>
+        <div class="form-group">
+        <label for="managerremark" >Manager's Remark</label>
+        	 <input type="text" id="managerremark"  name="managerremark" class="form-control" value="Not Approved" ng-model="vm.expenseitem.managerremark"   style="width:120px" readonly />
+        </div>
+        <div class="form-group">
+        <label for="managercomment" >Manager's Comments</label>
+        <textarea id="managercomment" class="form-control" name="managercomment" cols="20" rows="5" ng-model="vm.expenseitem.managercomment" readonly > </textarea>
+           
+
+
+        <div class="form-group">
+          <label for="filename" >File</label>
+          <br>
+        <img src="../uploads/{{vm.expenseitem.expname}}.jpg" alt="bill"/>
+        </div>
+        <div class="form-group">
+        <label for="currency" >Currency</label>
+        <input type="text" name="currency" class="form-control" ng-model="vm.expenseitem.currency"  readonly >
+        
+        </div>
+
+        <div ng-init="accordion=1">
+              <h3 class="accordion" ng-class="{active:none}">
+              <a href ng-click="accordion = 1">Details of Food Expenses</a>
+              </h3>
+              
+			<table class="accordion-content" ng-show="accordion==1">
+  				<tr>
+    				<th>Sl No.</th>
+   					<th>Date</th>
+   					<th>Bill No.</th>
+   					<th>Value</th>
+   					<th>Remark</th>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno11" name="serialno11" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno11"  readonly /></td>
+    				<td><input type="text" id="date11" name="date11" class="form-control" style="width:80%" ng-model="vm.expenseitem.date11"  readonly /></td>
+    				<td><input type="text" id="billno11" name="billno11" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno11"  readonly  /></td>
+    				<td><input type="text" id="value11" name="value11" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value11"  readonly/></td>
+    				<td><input type="text" id="remark11" name="remark11" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark11"  readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno12" name="serialno12" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno12"  readonly /></td>
+    				<td><input type="text" id="date12" name="date12" class="form-control" style="width:80%" ng-model="vm.expenseitem.date12"  readonly /></td>
+    				<td><input type="text" id="billno12" name="billno12" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno12"  readonly  /></td>
+    				<td><input type="text" id="value12" name="value12" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value12"  readonly/></td>
+    				<td><input type="text" id="remark12" name="remark12" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark12"  readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno13" name="serialno13" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno13"  readonly /></td>
+    				<td><input type="text" id="date13" name="date13" class="form-control" style="width:80%" ng-model="vm.expenseitem.date13"  readonly /></td>
+    				<td><input type="text" id="billno13" name="billno13" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno13"  readonly  /></td>
+    				<td><input type="text" id="value13" name="value13" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value13"  readonly/></td>
+    				<td><input type="text" id="remark13" name="remark13" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark13"  readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno14" name="serialno14" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno14"  readonly /></td>
+    				<td><input type="text" id="date14" name="date14" class="form-control" style="width:80%" ng-model="vm.expenseitem.date14"  readonly /></td>
+    				<td><input type="text" id="billno14" name="billno14" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno14"  readonly  /></td>
+    				<td><input type="text" id="value14" name="value14" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value14"  readonly/></td>
+    				<td><input type="text" id="remark14" name="remark14" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark14"  readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno15" name="serialno15" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno15"  readonly /></td>
+    				<td><input type="text" id="date15" name="date15" class="form-control" style="width:80%" ng-model="vm.expenseitem.date15"  readonly /></td>
+    				<td><input type="text" id="billno15" name="billno15" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno15"  readonly   /></td>
+    				<td><input type="text" id="value15" name="value15" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value15"  readonly/></td>
+    				<td><input type="text" id="remark15" name="remark15" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark15"  readonly /></td>
+  				</tr>
+  			</table>
+  	
+
+		<h3 class="accordion" ng-class="{active:accordion==2}">
+              <a href ng-click="accordion = 2">Details of Accomodation Expenses</a>
+              </h3>
+  			<table class="accordion-content" ng-show="accordion==2">
+  				<tr>
+    				<th>Sl No.</th>
+   					<th>Date</th>
+   					<th>Bill No.</th>
+   					<th>Value</th>
+   					<th>Remark</th>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno21" name="serialno21" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno21"  readonly /></td>
+    				<td><input type="text" id="date21" name="date21" class="form-control" style="width:80%" ng-model="vm.expenseitem.date21"  readonly /></td>
+    				<td><input type="text" id="billno21" name="billno21" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno21"  readonly  /></td>
+    				<td><input type="text" id="value21" name="value21" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value21"  readonly/></td>
+    				<td><input type="text" id="remark21" name="remark21" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark21"  readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno22" name="serialno22" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno22"  readonly /></td>
+    				<td><input type="text" id="date22" name="date22" class="form-control" style="width:80%" ng-model="vm.expenseitem.date22"  readonly /></td>
+    				<td><input type="text" id="billno22" name="billno22" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno22"  readonly   /></td>
+    				<td><input type="text" id="value22" name="value22" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value22"  readonly/></td>
+    				<td><input type="text" id="remark22" name="remark22" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark22"  readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno23" name="serialno23" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno23"  readonly  /></td>
+    				<td><input type="text" id="date23" name="date23" class="form-control" style="width:80%" ng-model="vm.expenseitem.date23"  readonly /></td>
+    				<td><input type="text" id="billno23" name="billno23" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno23"  readonly  /></td>
+    				<td><input type="text" id="value23" name="value23" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value23"  readonly/></td>
+    				<td><input type="text" id="remark23" name="remark23" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark23"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno24" name="serialno24" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno24"  readonly  /></td>
+    				<td><input type="text" id="date24" name="date24" class="form-control" style="width:80%" ng-model="vm.expenseitem.date24"  readonly /></td>
+    				<td><input type="text" id="billno24" name="billno24" class="form-control" style="width:50%"  ng-model="vm.expenseitem.billno24"  readonly /></td>
+    				<td><input type="text" id="value24" name="value24" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value24"  readonly/></td>
+    				<td><input type="text" id="remark24" name="remark24" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark24"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno25" name="serialno25" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno25"  readonly  /></td>
+    				<td><input type="text" id="date25" name="date25" class="form-control" style="width:80%" ng-model="vm.expenseitem.date25"  readonly /></td>
+    				<td><input type="text" id="billno25" name="billno25" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno25"  readonly  /></td>
+    				<td><input type="text" id="value25" name="value25" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value25"  readonly/></td>
+    				<td><input type="text" id="remark25" name="remark25" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark25"  readonly /></td>
+  				</tr>
+  			</table>
+		
+    <h3 class="accordion" ng-class="{active:accordion==3}">
+              <a href ng-click="accordion = 3">Details of Communication Expenses</a>
+              </h3>
+             
+  			<table  class="accordion-content" ng-show="accordion==3">
+  				<tr>
+    				<th>Sl No.</th>
+   					<th>Date</th>
+   					<th>Bill No.</th>
+   					<th>Value</th>
+   					<th>Remark</th>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno31" name="serialno31" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno31"  readonly  /></td>
+    				<td><input type="text" id="date31" name="date31" class="form-control" style="width:80%" ng-model="vm.expenseitem.date31"  readonly /></td>
+    				<td><input type="text" id="billno31" name="billno31" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno31"  readonly  /></td>
+    				<td><input type="text" id="value31" name="value31" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value31"  readonly/></td>
+    				<td><input type="text" id="remark31" name="remark31" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark31"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno32" name="serialno32" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno32"  readonly /></td>
+    				<td><input type="text" id="date32" name="date32" class="form-control" style="width:80%" ng-model="vm.expenseitem.date32"  readonly/></td> 
+    				<td><input type="text" id="billno32" name="billno32" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno32"  readonly  /></td>
+    				<td><input type="text" id="value32" name="value32" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value32"  readonly/></td>
+    				<td><input type="text" id="remark32" name="remark32" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark32"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno33" name="serialno33" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno33"  readonly /></td>
+    				<td><input type="text" id="date33" name="date33" class="form-control" style="width:80%" ng-model="vm.expenseitem.date33"  readonly/></td>
+    				<td><input type="text" id="billno33" name="billno33" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno33"  readonly  /></td>
+    				<td><input type="text" id="value33" name="value33" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value33"  readonly/></td>
+    				<td><input type="text" id="remark33" name="remark33" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark33"  readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno34" name="serialno34" class="form-control" style="width:20%"  ng-model="vm.expenseitem.serialno34"  readonly/></td>
+    				<td><input type="text" id="date34" name="date34" class="form-control" style="width:80%" ng-model="vm.expenseitem.date34"  readonly/></td>
+    				<td><input type="text" id="billno34" name="billno34" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno34"  readonly   /></td>
+    				<td><input type="text" id="value34" name="value34" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value34"  readonly/></td>
+    				<td><input type="text" id="remark34" name="remark34" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark34"  readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno35" name="serialno35" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno35"  readonly /></td>
+    				<td><input type="text" id="date35" name="date35" class="form-control" style="width:80%" ng-model="vm.expenseitem.date35"  readonly/></td>
+    				<td><input type="text" id="billno35" name="billno35" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno35"  readonly  /></td>
+    				<td><input type="text" id="value35" name="value35" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value35"  readonly/></td>
+    				<td><input type="text" id="remark35" name="remark35" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark35"  readonly /></td>
+  				</tr>
+  			</table>
+		
+    <h3 class="accordion" ng-class="{active:accordion==4}">
+              <a href ng-click="accordion = 4">Details of Local Conveyance Expenses</a>
+              </h3>
+              
+  			<table class="accordion-content" ng-show="accordion==4">
+  				<tr>
+    				<th>Sl No.</th>
+   					<th>Date</th>
+   					<th>Bill No.</th>
+   					<th>Value</th>
+   					<th>Remark</th>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno41" name="serialno41" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno41"  readonly/></td>
+    				<td><input type="text" id="date41" name="date41" class="form-control" style="width:80%" ng-model="vm.expenseitem.date41"  readonly/></td>
+    				<td><input type="text" id="billno41" name="billno41" class="form-control" style="width:50%"  ng-model="vm.expenseitem.billno41"  readonly /></td>
+    				<td><input type="text" id="value41" name="value41" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value41"  readonly/></td>
+    				<td><input type="text" id="remark41" name="remark41" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark41"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno42" name="serialno42" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno42"  readonly /></td>
+    				<td><input type="text" id="date42" name="date42" class="form-control" style="width:80%" ng-model="vm.expenseitem.date42"  readonly/></td>
+    				<td><input type="text" id="billno42" name="billno42" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno42"  readonly /></td>
+    				<td><input type="text" id="value42" name="value42" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value42"  readonly/></td>
+    				<td><input type="text" id="remark42" name="remark42" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark42"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno43" name="serialno43" class="form-control" style="width:20%"  ng-model="vm.expenseitem.serialno43"  readonly/></td>
+    				<td><input type="text" id="date43" name="date43" class="form-control" style="width:80%" ng-model="vm.expenseitem.date43"  readonly/></td>
+    				<td><input type="text" id="billno43" name="billno43" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno43"  readonly/></td>
+    				<td><input type="text" id="value43" name="value43" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value43"  readonly/></td>
+    				<td><input type="text" id="remark43" name="remark43" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark43"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno44" name="serialno44" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno44"  readonly /></td>
+    				<td><input type="text" id="date44" name="date44" class="form-control" style="width:80%" ng-model="vm.expenseitem.date44"  readonly/></td>
+    				<td><input type="text" id="billno44" name="billno44" name="billno44" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno44"  readonly /></td>
+    				<td><input type="text" id="value44" name="value44" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value44"  readonly/></td>
+    				<td><input type="text" id="remark44" name="remark44" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark44"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno45" name="serialno45" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno45"  readonly/></td>
+    				<td><input type="text" id="date45" name="date45" class="form-control" style="width:80%" ng-model="vm.expenseitem.date45"  readonly/></td>
+    				<td><input type="text" id="billno45" name="billno45" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno45"  readonly/></td>
+    				<td><input type="text" id="value45" name="value45" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value45"  readonly/></td>
+    				<td><input type="text" id="remark45" name="remark45" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark45"  readonly  /></td>
+  				</tr>
+  			</table>
+		
+
+
+    <h3 class="accordion" ng-class="{active:accordion==5}">
+              <a href ng-click="accordion = 5">Perdiem Expenses</a>
+              </h3>
+              
+  			<table class="accordion-content" ng-show="accordion==5">
+  				<tr>
+    				<th>Sl No.</th>
+   					<th>Date</th>
+   					<th>Bill No.</th>
+   					<th>Value</th>
+   					<th>Remark</th>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno51" name="serialno51" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno51"  readonly/></td>
+    				<td><input type="text" id="date51" name="date51" class="form-control" style="width:80%" ng-model="vm.expenseitem.date51"  readonly/></td>
+    				<td><input type="text" id="billno51" name="billno51" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno51"  readonly/></td>
+    				<td><input type="text" id="value51" name="value51" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value51"  readonly/></td>
+    				<td><input type="text" id="remark51" name="remark51" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark51"  readonly  /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno52" name="serialno52" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno52"  readonly /></td>
+    				<td><input type="text" id="date52" name="date52" class="form-control" style="width:80%" ng-model="vm.expenseitem.date52"  readonly/></td>
+    				<td><input type="text" id="billno52" name="billno52"  class="form-control" style="width:50%" ng-model="vm.expenseitem.billno52"  readonly/></td>
+    				<td><input type="text" id="value52" name="value52" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value52"  readonly/></td>
+    				<td><input type="text" id="remark52" name="remark52" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark52"  readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno53" name="serialno53" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno53"  readonly/></td>
+    				<td><input type="text" id="date53" name="date53" class="form-control" style="width:80%" ng-model="vm.expenseitem.date53"  readonly/></td>
+    				<td><input type="text" id="billno53" name="billno53" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno53"  readonly/></td>
+    				<td><input type="text" id="value53" name="value53" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value53"  readonly/></td>
+    				<td><input type="text" id="remark53" name="remark53" class="form-control" style="width:90%"  ng-model="vm.expenseitem.remark53"  readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno54" name="serialno54" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno54"  readonly/></td>
+    				<td><input type="text" id="date54" name="date54" class="form-control" style="width:80%" ng-model="vm.expenseitem.date54"  readonly/></td>
+    				<td><input type="text" id="billno54" name="billno54" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno54"  readonly /></td>
+    				<td><input type="text" id="value54" name="value54" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value54"  readonly/></td>
+    				<td><input type="text" id="remark54" name="remark54" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark54"  readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><input type="text" id="serialno55" name="serialno55" class="form-control" style="width:20%" ng-model="vm.expenseitem.serialno55"  readonly /></td>
+    				<td><input type="text" id="date55" name="date55" class="form-control" style="width:80%" ng-model="vm.expenseitem.date55"  readonly/></td>
+    				<td><input type="text" id="billno55" name="billno55" class="form-control" style="width:50%" ng-model="vm.expenseitem.billno55"  readonly/></td>
+    				<td><input type="text" id="value55" name="value55" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.value55"  readonly/></td>
+    				<td><input type="text" id="remark55" name="remark55" class="form-control" style="width:90%" ng-model="vm.expenseitem.remark55"  readonly /></td>
+  				</tr>
+  			</table>
+		
+
+    <h3 class="accordion" ng-class="{active:accordion==6}">
+              <a href ng-click="accordion = 6">Expense Details</a>
+              </h3>
+             
+  			<table class="accordion-content" ng-show="accordion==6">
+  				<tr>
+    				<th>Expense Head</th>
+   					<th>Value</th>
+  				</tr>
+  				<tr>
+    				<td><label for="accxpenselabel">Accomodation Expense</label></td>
+    				<td><input type="text" id="accexpense" name="accexpense" class="form-control" style="width:50%" ng-model="vm.expenseitem.accexpense"   readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><label for="foodxpenselabel">Food Expense</label></td>
+    				<td><input type="text" id="foodexpense" name="foodexpense" class="form-control" style="width:50%" ng-model="vm.expenseitem.foodexpense" readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><label for="commxpenselabel">Communication Expense</label></td>
+    				<td><input type="text" id="commexpense" name="commexpense" class="form-control" style="width:50%" ng-model="vm.expenseitem.commexpense" readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><label for="convxpenselabel">Conveyance Expense</label></td>
+    				<td><input type="text" id="convexpense" name="convexpense" class="form-control" style="width:50%" ng-model="vm.expenseitem.convexpense" readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><label for="perdexpenselabel">Perdiem Expense</label></td>
+    				<td><input type="text" id="perdexpense" name="perdexpense" class="form-control" style="width:50%" ng-model="vm.expenseitem.perdexpense" readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><label for="totexpenselabel">Total Expense</label></td>
+    				<td><input type="text" id="totexpense" name="totexpense" class="form-control" style="width:50%" ng-model="vm.expenseitem.totexpense" readonly/></td>
+  				</tr>
+  				
+  			</table>
+		
+
+     <h3 class="accordion" ng-class="{active:accordion==7}">
+              <a href ng-click="accordion = 7">Advance Settlements</a>
+              </h3>
+              
+  			<table class="accordion-content" ng-show="accordion==7">
+  				
+  				<tr>
+    				<td><label for="chequelabel">Cheque</label></td>
+    				<td><input type="text" id="cheque" name="cheque" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.cheque" readonly/></td>
+  				</tr>
+  				<tr>
+    				<td><label for="onlinepaymentlabel">Online Payment</label></td>
+    				<td><input type="text" id="onlinepayment" name="onlinepayment" class="form-control" value="0" style="width:50%" ng-model="vm.expenseitem.onlinepayment" readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><label for="totadvancelabel">Total Advance</label></td>
+    				<td><input type="text" id="totadvance" name="totadvance" class="form-control" style="width:50%" ng-model="vm.expenseitem.totadvance" readonly /></td>
+  				</tr>
+  				<tr>
+    				<td><label for="refundlabel">Refund/Balance</label></td>
+    				<td><input type="text" id="refund" name="refund" class="form-control" style="width:50%" ng-model="vm.expenseitem.refund"  readonly/></td>
+  				</tr>	
+  			</table>
+		
+  </div>
+    <label name="commentlabel">Comments</label><br>
+    <textarea name="comment" class="form-control" cols="20" rows="5" ng-model="comment.value"> </textarea>
+		<span class="centreButtons" style="text-align: center; display: block; ">
+		    <a href="./#/employerdashboard" style="color:white"><button type= "submit" class="btn btn-primary"  name="accept" ng-click="verdict('Approved', comment.value)">Accept</button></a>
+        <a href="./#/employerdashboard" style="color:white"><button type= "submit" class="btn btn-primary" name="reject" ng-click="verdict('Rejected' , comment.value)" >Reject</button></a>
+    		<a href="./#/employerdashboard" class="btn btn-link">Cancel</a>
+    	</span>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+</body>
+
+
+</div>

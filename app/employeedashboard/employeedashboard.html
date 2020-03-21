@@ -1,0 +1,28 @@
+<h3 style="float: left;">Dashboard</h3></br>
+<button type="button" class="btn btn-primary" style="float: right;" ng-click="vm.redirectUser()">Create new Report</button>
+
+<div class="form-container">
+    <table class="table">
+    <tr>
+        <th>Report   
+        </th>
+        <th>Time of Submission
+        </th>
+        <th>Manager's Decision
+        </th>
+        <th>Manager's Name
+        </th>
+    </tr>
+    <tr ng-repeat="x in vm.expenseitems">
+        <td><a ui-sref="report({reportname : '{{x.expname}}'})" >{{x.expname}}</a>
+        </td>
+         <td>{{x.timeofsub}}
+        </td>
+        <td>{{x.managerremark}}
+        </td>
+        <td>{{x.managername}}
+        </td>
+        
+    </tr>
+</table>
+</div>

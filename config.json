@@ -1,0 +1,6 @@
+﻿{
+    "connectionString": "mongodb://localhost/db1",
+    "apiUrl": "http://localhost:3000/api",
+    "secret": "abcd",
+    "timeforlock" : 86400000
+}

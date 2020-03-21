@@ -1,0 +1,132 @@
+<%- include('partials/header') %>
+<div class="pre-captcha-wrapper" style="width:600px; margin:0 auto">
+            <div class="captcha-wrapper" style="background-color: #E3E3E3;">
+<div class="form-container">
+    
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form method="post" name="myForm">
+        <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" name="firstName" id="firstName" ng-model="formData.firstname" class="form-control" value="<%= locals.firstName || '' %>" required />
+
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" value="<%= locals.lastName || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" value="<%= locals.username || '' %>" ng-model="formData.username" ng-minlength="5" ng-maxlength="20" ng-pattern="/^[A-z][A-z0-9]*$/" required />
+        </div>
+        <div class="form-group">
+            <label for="username">User EmailID</label>
+            <input type="text" name="useremail" id="useremail" class="form-control" value="<%= locals.useremail || '' %>" ng-model="formData.useremail"  required />
+        </div>
+        <div class="form-group">
+            <label for="usertype">UserType</label>
+            <select name="usertype" class="form-control" >
+              <option value="employee">Employee</option>
+              <option value="employer">Employer</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="formData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" valid-password-c required />
+        <div class="form-group" id ="errors"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" ng-model="formData.confirmpassword"   required />
+        </div>
+        <div class="form-group">
+            <button type="submit" name="register" id="register" class="btn btn-primary" disabled>Register</button>
+            <a href="/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+
+</div>
+</div>
+</div>
+<style>
+.captcha-wrapper{-webkit-border-radius:10px;padding-left:200px;padding-right:200px;-moz-border-radius:10px;-ms-border-radius:10px;-o-border-radius:10px;border-radius:10px;background-color:#fff;padding:10px 15px 10px;-webkit-box-shadow:rgba(0,0,0,0.4) 0 0 25px;-moz-box-shadow:rgba(0,0,0,0.4) 0 0 25px;box-shadow:rgba(0,0,0,0.4) 0 0 25px;margin:0 15px}@media only screen and (min-width: 1101px){.captcha-wrapper.multiple{display:inline-block;width:45.1%;max-width:620px}}@media only screen and (max-width: 1100px){.captcha-wrapper.multiple:nth-of-type(n+2){margin-top:60px}}@media only screen and (max-width: 360px){.captcha-wrapper.multiple:nth-of-type(n+2){margin-top:30px}}@media only screen and (min-width: 361px){.captcha-wrapper{padding:20px 83px 40px}}.captcha-wrapper h1{font-family:'Oxygen', sans-serif;font-size:20px;color:#2274a2;font-weight:300;text-align:center}@media only screen and (min-width: 750px){.captcha-wrapper h1{font-size:30px;margin-bottom:40px}}
+</style>
+<script>
+
+var password = document.getElementById("password");
+var confirm_password = document.getElementById("confirmpassword");
+var register = document.getElementById("register");
+
+function validatePassword(){
+
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+     confirm_password.setCustomValidity("");
+     if(document.getElementById('errors').innerHTML==" "){
+     register.disabled = false;
+     }
+     
+  }
+}
+
+
+confirm_password.onkeyup = validatePassword;
+
+
+
+
+
+</script>
+
+
+<script>
+
+var password1 = document.getElementById("password");
+function CheckPassword()   
+{  
+ 
+    if(password1.value.length < 8 || password1.value.length > 20) {
+    document.getElementById('errors').innerHTML="*Password must be 8-20 characters long";
+    
+        return false;
+      }
+
+ re = /[0-9]/;
+      if(!re.test(password1.value)) {
+        document.getElementById('errors').innerHTML="Password must contain one numeric digit";
+        
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(password1.value)) {
+        document.getElementById('errors').innerHTML="Password must contain at least one lowercase letter";
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(password1.value)) {
+        document.getElementById('errors').innerHTML="Password must contain at least one uppercase letter";
+        return false;
+      }
+       re = /[!@#$%]/;
+      if(!re.test(password1.value)) {
+        document.getElementById('errors').innerHTML="Password must contain at least one special letter among !@#$%";
+        return false;
+      }
+
+    else {
+    document.getElementById('errors').innerHTML=" ";
+        return true;
+    }
+}
+
+  
+
+password1.onchange = CheckPassword;
+
+
+</script>
+
+<%- include('partials/footer') %>
